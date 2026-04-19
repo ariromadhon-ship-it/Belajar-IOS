@@ -106,7 +106,7 @@ class ProfileViewController: UIViewController {
     private func configureContent() {
         // Update this with your real information
         nameLabel.text = "Ari Romadhon"
-        emailLabel.text = "ari.romadhon@example.com"
+        emailLabel.text = "arirahmatromadhon@gmail.com"
         
         let bioText = """
         Hello! I'm a passionate iOS developer and travel enthusiast.
