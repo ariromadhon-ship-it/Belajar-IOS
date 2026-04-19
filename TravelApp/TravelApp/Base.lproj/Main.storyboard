@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.iPhone.Storyboard" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorLaunchImage="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nav-1C">
+            <objects>
+                <navigationController id="YPa-tV-gkd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iFm-Pv-aMJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="home-vc" kind="relationship" relationship="rootViewController" id="seg-home"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UkY-9O-3gI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="330"/>
+        </scene>
+        <!--Travel Destinations-->
+        <scene sceneID="scene-home">
+            <objects>
+                <tableViewController id="home-vc" customClass="HomeViewController" customModule="TravelApp" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="table-home">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="heightSizable"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessories="NO" accessoryType="disclosureIndicator" id="cell-home">
+                                <rect key="frame" x="0.0" y="50" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cell-content">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="detail-vc" kind="show" identifier="showDetail" id="seg-detail"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="home-vc" id="datasource-home"/>
+                            <outlet property="delegate" destination="home-vc" id="delegate-home"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Travel Destinations" id="nav-item-home">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="btn-about">
+                            <connections>
+                                <segue destination="profile-vc" kind="show" identifier="showProfile" id="seg-profile"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBFirstResponder-home" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="330"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="scene-detail">
+            <objects>
+                <viewController id="detail-vc" customClass="DetailViewController" customModule="TravelApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="detail-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="heightSizable"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="detail-safe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nav-item-detail"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBFirstResponder-detail" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1499" y="330"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="scene-profile">
+            <objects>
+                <viewController id="profile-vc" customClass="ProfileViewController" customModule="TravelApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="profile-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="heightSizable"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="profile-safe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nav-item-profile"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBFirstResponder-profile" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="330"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
